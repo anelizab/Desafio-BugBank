@@ -1,6 +1,13 @@
-{
-    "baseUrl"; "http://localhost:3000", // Seu URL base (se aplicável)
-    "testFiles"; "**/*.spec.js", // Padrão para os arquivos de teste
-    "pluginsFile"; "cypress/plugins/index.js",
-    "supportFile"; "cypress/support/index.js"
-}
+const { defineConfig } = require("cypress");
+
+module.exports = defineConfig({
+  e2e: {
+    setupNodeEvents() {
+    },
+  },
+  
+  env: {
+    baseUrl: 'https://www.gamestolearnenglish.com/'
+  }
+
+});

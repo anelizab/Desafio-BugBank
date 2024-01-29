@@ -1,4 +1,8 @@
-# Ignorar a pasta node_modules
-node_modules/
-# Arquivos temporários
-.DS_Store
+node_modules
+
+cypress.env.json
+.vscode
+.idea
+videos
+screenshots
+cypress/reports
