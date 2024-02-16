@@ -7,7 +7,7 @@ module.exports = defineConfig({
   },
   
   env: {
-    baseUrl: 'https://www.gamestolearnenglish.com/'
+    url: 'https://pje-dbserver-1g.stg.cloud.cnj.jus.br/pje/login.seam'
   }
 
 });
