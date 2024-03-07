@@ -12,3 +12,7 @@
     //cy.get('[name="password"]').type("123456");
     //cy.get('[name="passwordconfirmation"]').type("123456");
     // //input[@name="name"]
+
+    //vai interceptar uma requisição (onde busca alguma informção no back), e depois aguardar a requisição terminar
+    // cy.intercept('**/notes').as('getnotes')  
+    // cy.wait('@getNotes')    
