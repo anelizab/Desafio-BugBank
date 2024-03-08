@@ -7,7 +7,7 @@ module.exports = defineConfig({
   },
   
   env: {
-    url: 'https://pje-dbserver-1g.stg.cloud.cnj.jus.br/pje/login.seam'
+    url: 'https://pje-dbserver-1g.stg.cloud.cnj.jus.br/pje/login.seam',
   }
 
 });

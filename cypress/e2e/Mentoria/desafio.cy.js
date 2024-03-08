@@ -2,6 +2,8 @@
 import '@testing-library/dom';
 import '@testing-library/cypress';
 
+const conta = Cypress.env('primeiraConta')
+
 describe('Desafio bugbank', () => {
     beforeEach(() => {
         cy.visit('https://bugbank.netlify.app/');
@@ -26,11 +28,21 @@ describe('Desafio bugbank', () => {
        cy.get('.style__ContainerFormLogin-sc-1wbjw6k-0 > .login__password > .style__ContainerFieldInput-sc-s3e9ea-0 > .input__default'). type("123456");       
        cy.contains('button', 'Acessar').click();
        cy.contains('.home__ContainerText-sc-1auj767-7 > :nth-child(2)', 'bem vindo ao BugBank :)').should('exist')
+       cy.get('#textAccountNumber > span').should('exist')
        
        // Gravar os dados da conta
+       cy.get('#textAccountNumber > span').invoke('text')
+       Cypress.env('conta', 'text')
+       cy.log(Cypress.env('conta'))
+               
 
        // Sair 
-       cy.get('.home__ContainerLink-sc-1auj767-2').click()  
+       //cy.get('.home__ContainerLink-sc-1auj767-2').click()  
+
+
+       //para informar a conta gravada
+       //cy.get('input[id="IWEDTEXECFISC"]').type(Cypress.env('primeiraConta'));       
+
     })
 
 // criar uma conta, guardar as informações da conta criada e sair
