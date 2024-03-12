@@ -31,10 +31,19 @@ describe('Desafio bugbank', () => {
        cy.get('#textAccountNumber > span').should('exist')
        
        // Gravar os dados da conta
-       cy.get('#textAccountNumber > span').invoke('text')
-       Cypress.env('conta', 'text')
-       cy.log(Cypress.env('conta'))
+       //cy.get('#textAccountNumber > span').invoke('text')
+       //Cypress.env('conta', 'text')
+       //cy.log(Cypress.env('conta'))
                
+
+        const accountNumberElement = cy.findByText('Conta digital:');
+
+         accountNumberElement.invoke('text').then((accountNumber) => {
+              cy.task('getClipboard').then(() => {
+                await clipboardy.writeSync(accountNumber);
+              });
+              cy.paste().should('equal', accountNumber);
+             });
 
        // Sair 
        //cy.get('.home__ContainerLink-sc-1auj767-2').click()  
@@ -45,9 +54,9 @@ describe('Desafio bugbank', () => {
 
     })
 
-// criar uma conta, guardar as informações da conta criada e sair
-// criar a segunda conta 
-// realizar a tranferência de valor para a primeira conta
-// validar o saldo
+        // criar uma conta, guardar as informações da conta criada e sair
+        // criar a segunda conta 
+        // realizar a tranferência de valor para a primeira conta
+        // validar o saldo
 
 })
