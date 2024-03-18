@@ -1,4 +1,12 @@
-{
-    "usuario": "04353921584",
-    "senha": "04353921584"
-}
+[
+    {
+        "email": "anelizafb@gmail.com",
+        "name": "Aneliza",
+        "password": "123456"
+    },
+    {
+        "email": "anelizab@hotmail.com",
+        "name": "Ane",
+        "password": "654321"
+    }
+]

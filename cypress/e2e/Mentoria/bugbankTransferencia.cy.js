@@ -1,16 +1,21 @@
 import '@testing-library/dom';
 import '@testing-library/cypress';
 
-describe('Desafio bugbank', () => {    
-    it('Registrar usuário ', () => {
-       cy.visit('https://bugbank.netlify.app/');
+describe('Realizar transferência bancário no bugbank', () => {    
+  
+  beforeEach(() => {
+    cy.visit(Cypress.env('url'));
+  })  
+  
+  
+  it('Validar transferência com sucesso de um valor de uma conta para outra', () => {
        cy.get('.ihdmxA').click();
        cy.wait(500);
        cy.get(':nth-child(2) > .input__default').click({force:true}).type('anelizafb@gmail.com').should('exist')
        cy.get(':nth-child(3) > .input__default').click({force:true}).type('Aneliza').should('exist')
        cy.get(':nth-child(4) > .style__ContainerFieldInput-sc-s3e9ea-0 > .input__default').click({force:true}).type('123456').should('exist')
        cy.get(':nth-child(5) > .style__ContainerFieldInput-sc-s3e9ea-0 > .input__default').click({force:true}).type('123456').should('exist')
-       cy.get('#toggleAddBalance').click({force:true})  // TEM OUTRA MANEIRA DE FAZER????
+       cy.get('#toggleAddBalance').click({force:true})  
        cy.get('.styles__ContainerFormRegister-sc-7fhc7g-0 > .style__ContainerButton-sc-1wsixal-0').click({force:true})
        cy.get('#modalText').should("exist")
        cy.get('#btnCloseModal').click()
