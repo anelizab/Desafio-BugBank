@@ -7,7 +7,7 @@ describe('Realizar cadastro no Bugbank', () => {
         cy.visit(Cypress.env('url'));
     })
 
-    it.only('Validar cadastro com sucesso de uma conta com saldo', () => {
+    it('Validar cadastro com sucesso de uma conta com saldo', () => {
        cy.get('.ihdmxA').click();
        cy.wait(500);
        cy.get(':nth-child(2) > .input__default').click({force:true}).type('anelizafb@gmail.com').should('exist')

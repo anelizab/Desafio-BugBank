@@ -19,4 +19,6 @@ describe('Realizar login no Bugbank', () => {
     
 })
 
-// tentar realizar registro buscando os dados para cadastro, do arquivo de usuarios.json
+
+
+// **** tentar realizar registro buscando os dados para cadastro, do arquivo de usuarios.json
