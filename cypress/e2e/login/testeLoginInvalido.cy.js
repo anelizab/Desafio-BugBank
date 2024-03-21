@@ -7,9 +7,16 @@ describe('Realizar login inválido no Bugbank', () => {
         cy.visit(Cypress.env('url'));
     })
 
-    it('Validar mensagem de login inválido', () => {
+    it('Validar mensagem de email inválido', () => {
         cy.registrar('anelizafb@gmail.com', 'Aneliza', '123456');        
         cy.login('anelizab@hotmail.com', '123456');
+        cy.contains('#modalText', 'Usuário ou senha inválido. Tente novamente ou verifique suas informações!').should('exist')
+        cy.get('#btnCloseModal').click({force:true})
+     }) 
+
+     it('Validar mensagem de senha inválida', () => {
+        cy.registrar('anelizafb@gmail.com', 'Aneliza', '123456');        
+        cy.login('anelizafb@gmail.com', '666666');
         cy.contains('#modalText', 'Usuário ou senha inválido. Tente novamente ou verifique suas informações!').should('exist')
         cy.get('#btnCloseModal').click({force:true})
      }) 

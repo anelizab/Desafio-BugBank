@@ -71,3 +71,6 @@ describe('Realizar cadastro no Bugbank', () => {
 
      }); 
 })
+
+
+// Ajustar as validações da conta com e sem saldo
